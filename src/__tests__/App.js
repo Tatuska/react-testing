@@ -4,28 +4,8 @@ import  fakePost from '../fakePosts'
 import App from '../components/App';
 import PersonaSwitcher from '../components/PersonaSwitcher'
 import sinon from 'sinon';
+import * as api from '../api';
 
-test('renders the app', () => {
-  render(<App />);
-});
-
-test('expect to find Button rendered at the start', () => {
-  const wrapper = shallow(<App />)
-  
-  expect(wrapper.find('Button')).toBeDefined();
-});
-
-test('expect to find PersonaSwitcher rendered at the start', () => {
-  const wrapper = shallow(<App />)
-  
-  expect(wrapper.find('PersonaSwitcher')).toBeDefined();
-});
-
-test('expect to find Posts rendered at the start', () => {
-  const wrapper = shallow(<App />)
-  
-  expect(wrapper.find('Posts')).toBeDefined();
-});
 
 test('find the first button and see what is written on it', () => {
   const wrapper = shallow(<App />);
@@ -53,7 +33,7 @@ expect(wrapper.state().currentPersona).toEqual('tatev');
 test('calls componentDidMount', () => {
   sinon.spy(App.prototype, 'componentDidMount');
     const wrapper = mount(<App />);
-    console.log(wrapper.state());
     expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
 });
+
 

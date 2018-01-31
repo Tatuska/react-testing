@@ -11,20 +11,11 @@ import SingleComment from '../components/SingleComment';
 
 
 
-
-
-it('posts constains SinglePost', () => {
-    const posts = fakePost.data;
-    const wrapper = mount(<Posts posts={posts} />);
-    expect(wrapper.find('SinglePost')).toBeDefined();
-   
-  })
-
   it('amount of posts loaded', () => {
     const posts = fakePost.data;
     const stringified=JSON.stringify(posts);
     localStorage.setItem("posts",stringified);
-    const wrapper = mount(<Posts posts={posts} />);
+    const wrapper = mount(<Posts posts={posts} currentPersona='Zac' />);
     const list = wrapper.find('SinglePost');
     expect(wrapper.find('SinglePost')).toHaveLength(3);
    
@@ -42,7 +33,7 @@ it('posts constains SinglePost', () => {
     }];
     const stringified=JSON.stringify(post);
     localStorage.setItem("posts",stringified);
-    const wrapper = mount(<Posts posts={post} />);
+    const wrapper = mount(<Posts posts={post} currentPersona='Zac' />);
     
     expect(wrapper.find('Everyday')).toBeDefined();
   })
@@ -52,7 +43,7 @@ it('posts constains SinglePost', () => {
     const posts = fakePost.data;
     const stringified=JSON.stringify(posts);
     localStorage.setItem("posts",stringified);
-    const wrapper = mount(<Posts posts={posts} />);
+    const wrapper = mount(<Posts posts={posts}  currentPersona='Zac'  />);
     expect(wrapper.state().posts).toHaveLength(3);
     wrapper.instance().removePost('565ddy34');
     expect(wrapper.state().posts).toHaveLength(2);

@@ -4,10 +4,6 @@ import { render,mount, shallow  } from 'enzyme';
 import TypingIndicator from '../../components/Bot/TypingIndicator';
 
 
-
-
-
-
 it('expecting to find p', () => {
     
     const wrapper = shallow(<TypingIndicator typing={true}/>);
