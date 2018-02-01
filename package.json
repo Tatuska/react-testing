@@ -5,6 +5,7 @@
   "private": true,
   "author": "Jesper Orb <jesperorb@gmail.com> (https://jesperorb.com/)",
   "dependencies": {
+    "cypress": "^1.4.1",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-to-json": "3.3.0",
@@ -21,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "devDependencies": {
     "eslint-config-airbnb": "16.1.0",
